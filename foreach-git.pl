@@ -13,6 +13,7 @@ sub usage {
   print "  --quiet                   don't announce directory changes\n";
 }
 
+Getopt::Long::Configure('require_order');
 GetOptions(
   'h|help' => sub { usage; exit 0 },
   'd|dir=s' => \my $dir,
