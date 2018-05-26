@@ -8,6 +8,11 @@ use Getopt::Long;
 use Path::Tiny;
 use String::ShellQuote qw/shell_quote_best_effort/;
 
+BEGIN {
+    require constant;
+    constant->import(PROGNAME => path($0)->basename);
+}
+
 sub usage {
     my $fh = $_[0] // \*STDERR;
     print $fh "Usage: move_and_symlink [OPTIONS] from to\n";
@@ -32,7 +37,7 @@ GetOptions(
 };
 
 if (@ARGV != 2) {
-    warn "$0: incorrect number of arguments\n";
+    warn PROGNAME . ": incorrect number of arguments\n";
     usage();
     exit 1;
 }
