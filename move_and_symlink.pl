@@ -55,6 +55,10 @@ if ($to_arg->is_dir) {
     $to_arg = $to_arg->child($basename);
 }
 
+if ($to_arg->exists) {
+    die "$to_arg: File exists\n";
+}
+
 my ($from_mv, $to_mv) = ($from_arg, $to_arg);
 my ($from_ln, $to_ln) = ($from_arg, $to_arg);
 
