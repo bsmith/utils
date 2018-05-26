@@ -1,0 +1,14 @@
+Handy utilities
+
+  make installdeps
+  make test
+  make install # check the paths in the Makefile first!
+
+these require perl and install to your /home
+
+it's strongly suggested to configure cpanm and local::lib first
+
+the code tends to require perl 5.14.  Perl::MinimumVersion can be used to
+check compatibility.
+
+code quality was reviewed with `perlcritic --theme freenode`.
