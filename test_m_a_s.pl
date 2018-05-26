@@ -18,7 +18,7 @@ END {
 
 sub run_script {
     my ($args, $name) = @_;
-    my $rv = system("./move_and_symlink.pl", @$args);
+    my $rv = system($^X, "./move_and_symlink.pl", @$args);
     cmp_ok($rv, '==', 0, $name . ": run_script");
 }
 
